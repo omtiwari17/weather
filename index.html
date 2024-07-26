@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>WeatherNow</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="search" id="searchSection">
+            <h2>Check the Weather</h2>
+            <form id="weatherForm">
+                <input type="text" id="cityInput" placeholder="Enter city name" required>
+                <button type="submit">Get Weather</button>
+            </form>
+        </section>
+
+        <section class="weather-info" id="weatherInfo">
+            <!-- Weather details will be inserted here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WeatherNow. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
