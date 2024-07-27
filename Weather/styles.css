@@ -28,20 +28,20 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;   
+    padding: 1rem;
+    position: relative;
 }
 
 .search {
-    background: rgba(0, 0, 0, 0.6); /* Reduced opacity */
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     padding: 2rem;
     max-width: 600px;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for better contrast */
-    margin-bottom: 2rem;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: fixed;
-    top: 24%;
+    top: 18%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -53,7 +53,7 @@ main {
 
 .search form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -62,8 +62,8 @@ main {
     font-size: 1rem;
     border: none;
     border-radius: 5px;
-    margin-right: 1rem;
-    flex: 1; /* Increased width */
+    margin-bottom: 1rem;
+    width: 100%;
 }
 
 button {
@@ -74,26 +74,25 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    white-space: nowrap; /* Ensured text is on one line */
+    width: 100%;
+    white-space: nowrap;
 }
 
 button:hover {
     background-color: #006064;
-    animation: fadeIn 1s ease-in-out;
 }
 
 .weather-info {
-    background: rgba(0, 0, 0, 0.6); /* Same background as search */
+    background: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: none;
     max-width: 600px;
-    width: 100%;
-    margin-top: 16rem; /* Ensure spacing from the fixed search bar */
+    width: 90%;
+    margin-top: 15%;
     text-align: center;
-    z-index: 900;
 }
 
 .weather-info h3 {
@@ -110,16 +109,6 @@ footer {
     padding: 1rem;
     background-color: rgba(0, 131, 143, 0.8);
     color: white;
-    animation: none;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 @keyframes slideDown {
@@ -133,13 +122,53 @@ footer {
     }
 }
 
-@keyframes slideUp {
-    from {
-        transform: translateY(0px);
-        opacity: 0;
+@media (min-width: 769px) {
+    .search form {
+        flex-direction: row;
+        align-items: center;
     }
-    to {
-        transform: translateY(-50px);
-        opacity: 1;
+
+    #cityInput {
+        margin-right: 1rem;
+        margin-bottom: 0;
+        width: auto;
+        flex: 1;
+    }
+
+    button {
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .search {
+        top: 18%;
+        padding: 1rem;
+    }
+
+    .search h2 {
+        font-size: 1.5rem;
+    }
+
+    .search form {
+        flex-direction: column;
+    }
+
+    #cityInput {
+        margin-bottom: 0.5rem;
+        width: 96%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .weather-info {
+        margin-top: 20rem;
+        padding: 1rem;
+    }
+
+    .weather-info h3 {
+        font-size: 1.5rem;
     }
 }
