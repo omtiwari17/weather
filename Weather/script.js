@@ -24,11 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayWeather(data) {
-        const { name, main, weather } = data;
+        const { name, main, weather, wind } = data;
         weatherInfo.innerHTML = `
             <h3>${name}</h3>
             <p>Temperature: ${main.temp} °C</p>
             <p>Weather: ${weather[0].description}</p>
+            <p>Wind Speed: ${wind.speed} m/s</p>
         `;
         weatherInfo.style.display = 'block';
     }
